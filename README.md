@@ -17,10 +17,10 @@ Une interface interactive développée en HTML, CSS (avec Tailwind), et JavaScri
 - JavaScript vanilla
 
 ## 📂 Arborescence
-📁 toeic-trainer/
-├── index.html
-├── style.css
-├── script.js
+📁 toeic-trainer/ </br>
+├── index.html</br>
+├── style.css</br>
+├── script.js</br>
 
 ## 💻 Interfaces
 
