@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entraînement TOEIC - Sélection Réponses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-50 min-h-screen p-6">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold text-center mb-8">Entraînement TOEIC - Sélection des Réponses</h1>
+        
+        <!-- Contrôles -->
+        <div class="bg-white p-4 rounded-lg shadow-md mb-6 flex justify-between items-center">
+            <div>
+                <span id="eval-status" class="ml-4 font-semibold"></span>
+                <span class="font-medium">Question: </span>
+                <span id="current-question">1</span>/200
+            </div>
+        </div>
+        
+        <!-- Question -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <div class="mb-6">
+                <p class="text-lg font-medium">Sélectionnez votre réponse:</p>
+                <div class="mt-4 flex gap-4">
+                    <button id="mark-correct" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded transition">
+                        Bonne réponse
+                    </button>
+                    <button id="mark-wrong" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition">
+                        Mauvaise réponse
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4">
+                <div class="option border border-gray-200 p-4 rounded-lg text-center cursor-pointer" data-option="A">
+                    <span class="font-bold">A</span>
+                </div>
+                <div class="option border border-gray-200 p-4 rounded-lg text-center cursor-pointer" data-option="B">
+                    <span class="font-bold">B</span>
+                </div>
+                <div class="option border border-gray-200 p-4 rounded-lg text-center cursor-pointer" data-option="C">
+                    <span class="font-bold">C</span>
+                </div>
+                <div class="option border border-gray-200 p-4 rounded-lg text-center cursor-pointer" data-option="D">
+                    <span class="font-bold">D</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="flex justify-between">
+            <button id="prev-btn" class="bg-gray-300 hover:bg-gray-400 px-6 py-2 rounded disabled:opacity-50 transition" disabled>
+                Précédent
+            </button>
+            <button id="next-btn" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded transition">
+                Suivant
+            </button>
+        </div>
+        
+        <div class="text-center mt-8">
+            <button id="finish-btn" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded transition">
+                Se corriger et voir le score
+            </button>
+        </div>
+    </div>
+    
+    <!-- Modal pour les résultats -->
+    <div id="results-modal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold">Résultats du TOEIC</h2>
+                <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Toutes vos réponses :</h3>
+                <div id="answers-grid" class="flex flex-wrap"></div>
+            </div>
+            
+            <div class="bg-gray-100 p-4 rounded-lg mb-6">
+                <h3 class="text-xl font-semibold mb-2">Statistiques :</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-medium">Partie Orale (1-100)</h4>
+                        <p id="oral-correct">Bonnes réponses: 0</p>
+                        <p id="oral-wrong">Mauvaises réponses: 0</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium">Partie Écrite (101-200)</h4>
+                        <p id="written-correct">Bonnes réponses: 0</p>
+                        <p id="written-wrong">Mauvaises réponses: 0</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-blue-50 p-4 rounded-lg">
+                <h3 class="text-xl font-semibold mb-2">Score TOEIC :</h3>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="bg-white p-3 rounded shadow">
+                        <p class="text-sm text-gray-600">Score Oral</p>
+                        <p id="oral-score" class="text-2xl font-bold">0</p>
+                        <p class="text-sm text-gray-600">/ 495</p>
+                    </div>
+                    <div class="bg-white p-3 rounded shadow">
+                        <p class="text-sm text-gray-600">Score Écrit</p>
+                        <p id="written-score" class="text-2xl font-bold">0</p>
+                        <p class="text-sm text-gray-600">/ 495</p>
+                    </div>
+                    <div class="bg-white p-3 rounded shadow">
+                        <p class="text-sm text-gray-600">Score Total</p>
+                        <p id="total-score" class="text-2xl font-bold">0</p>
+                        <p class="text-sm text-gray-600">/ 990</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+.option {
+    transition: all 0.2s;
+}
+.option:hover {
+    background-color: #f3f4f6;
+}
+.option.selected {
+    background-color: #3b82f6;
+    color: white;
+}
+.option.incorrect {
+    background-color: #ef4444;
+    color: white;
+}
+.option.correct {
+    background-color: #10b981;
+    color: white;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+.answer-item {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.answer-item.correct {
+    background-color: #10b981;
+    color: white;
+}
+.answer-item.incorrect {
+    background-color: #ef4444;
+    color: white;
+}
+.answer-item.unmarked {
+    background-color: #e5e7eb;
+}
+#mark-correct, #mark-wrong {
+    display: none;
+}
