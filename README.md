@@ -1,5 +1,4 @@
-![image](https://github.com/user-attachments/assets/702f267d-238c-43a9-941e-2a19f4a718df)# 📝 Entraînement TOEIC – Sélection de Réponses
-
+#  Entrainement pour le TOEIC
 Une interface interactive développée en HTML, CSS (avec Tailwind), et JavaScript permettant de s'entraîner au format QCM du test TOEIC. L'utilisateur peut répondre à 200 questions, marquer ses réponses comme bonnes ou mauvaises, et obtenir un score calculé automatiquement.
 
 ## ✨ Fonctionnalités
